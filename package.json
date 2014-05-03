@@ -1,0 +1,35 @@
+{
+    "name"       : "webTemplate",
+    "description": "A web template for simple frontend. Using glup to build simple webserver and livereload.",
+    "version"    : "0.0.1",
+    "contributor": [
+        {
+            "name" : "Lee",
+            "email": "jessy1092@gmail.com"
+        }
+    ],
+    "scripts": {
+        "start": "gulp --require LiveScript dev"
+    },
+    "engines":{
+        "node": "0.10.x"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+        "LiveScript": "1.1.x",
+        "gulp": "~3.6.0",
+        "gulp-util": "~2.2.14",
+        "express": "~3.5.1",
+        "connect-livereload": "~0.3.2",
+        "tiny-lr": "0.0.5",
+        "gulp-livereload": "~1.2.0"
+    },
+    "repository": [
+        {
+            "type": "git",
+            "url" : "https://github.com/jessy1092/webTemplate"
+        }
+    ],
+    "license": "MIT"
+}
