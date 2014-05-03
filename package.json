@@ -1,6 +1,6 @@
 {
     "name"       : "webTemplate",
-    "description": "A web template for simple frontend. Using glup to build simple webserver and livereload.",
+    "description": "A web template for simple frontend. Using gulp to build simple webserver and livereload.",
     "version"    : "0.0.1",
     "contributor": [
         {

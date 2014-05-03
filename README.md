@@ -1,6 +1,6 @@
 webTemplate
 =============
-A web template for simple frontend. Using glup to build simple webserver and livereload.
+A web template for simple frontend. Using gulp to build simple webserver and livereload.
 
 ## Installation
 
@@ -14,7 +14,7 @@ and then open `http://localhost:3000/`
 
 #### 2014/05/03 v0.0.1
 - init
-- Using glup to build simple webserver and livereload
+- Using gulp to build simple webserver and livereload
 
 ## License
 
