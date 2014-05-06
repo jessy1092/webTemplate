@@ -2,6 +2,18 @@ webTemplate
 =============
 A web template for simple frontend. Using gulp to build simple webserver and livereload.
 
+## Structure
+
+- asserts
+    + data
+    + imgs
+    + scripts
+    + styles
+- vendor
+    + d3js
+    + jquery
+- views
+
 ## Installation
 
 `npm i`
@@ -11,6 +23,9 @@ A web template for simple frontend. Using gulp to build simple webserver and liv
 and then open `http://localhost:3000/`
 
 ## Change Log
+
+#### 2014/05/06 v0.1.0
+- Modify the web structure. Use the MVC.
 
 #### 2014/05/03 v0.0.1
 - init
