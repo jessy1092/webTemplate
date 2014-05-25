@@ -10,8 +10,10 @@ A web template for simple frontend. Using gulp to build simple webserver and liv
     + scripts
     + styles
 - vendor
+    + angular
     + d3js
     + jquery
+    + semantic-ui
 - views
 
 ## Installation
@@ -23,6 +25,9 @@ A web template for simple frontend. Using gulp to build simple webserver and liv
 and then open `http://localhost:3000/`
 
 ## Change Log
+
+#### 2014/05/25 v0.1.1
+- add angular and semantic-ui library.
 
 #### 2014/05/06 v0.1.0
 - Modify the web structure. Use the MVC.
