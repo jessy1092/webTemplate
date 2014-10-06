@@ -26,6 +26,9 @@ and then open `http://localhost:3000/`
 
 ## Change Log
 
+#### 2014/10/06 v0.1.2
+- update gulp-livereload to v2.0.0.
+
 #### 2014/05/25 v0.1.1
 - add angular and semantic-ui library.
 
