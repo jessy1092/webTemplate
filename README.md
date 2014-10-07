@@ -8,8 +8,8 @@ A web template for simple frontend. Using gulp to build simple webserver and liv
     + asserts
         - data
         - imgs
-        - scripts
-        - styles
+    + scripts
+    + styles
     + views
 - vendor
     + angular
@@ -26,6 +26,9 @@ A web template for simple frontend. Using gulp to build simple webserver and liv
 and then open `http://localhost:3000/`
 
 ## Change Log
+
+#### 2014/10/08 v0.3.0
+- Use browserify to maintain js.
 
 #### 2014/10/06 v0.2.0
 - Change the Web folder structure.

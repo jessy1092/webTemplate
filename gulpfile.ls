@@ -1,4 +1,4 @@
-require! <[gulp gulp-util express connect-livereload gulp-livereload path]>
+require! <[gulp gulp-util express connect-livereload gulp-livereload path browserify vinyl-source-stream]>
 
 app = express!
 build_path = '_public'
@@ -7,25 +7,23 @@ gulp.task 'html', ->
     gulp.src './app/views/*.html'
         .pipe gulp.dest "#{build_path}"
 
-gulp.task 'js', ->
-    gulp.src './app/assets/scripts/*.js'
-        .pipe gulp.dest "#{build_path}/assets/scripts/"
-
-gulp.task 'vendor', ->
-    gulp.src './vendors/**/*'
-        .pipe gulp.dest "#{build_path}/vendors/"
-
 gulp.task 'img', ->
     gulp.src './app/assets/imgs/*'
         .pipe gulp.dest "#{build_path}/assets/imgs/"
 
-gulp.task 'css', ->
-    gulp.src './app/assets/styles/*.css'
-        .pipe gulp.dest "#{build_path}/assets/styles/"
-
 gulp.task 'data', ->
     gulp.src './app/assets/data/*'
-        .pipe gulp.dest "#{build_path}assets/data/"
+        .pipe gulp.dest "#{build_path}/assets/data/"
+
+gulp.task 'css', ->
+    gulp.src './app/styles/*.css'
+        .pipe gulp.dest "#{build_path}/styles/"
+
+gulp.task 'browserify', ->
+    browserify './app/scripts/app.js'
+        .bundle!
+        .pipe vinyl-source-stream 'bundle.js'
+        .pipe gulp.dest "#{build_path}/scripts/"
 
 gulp.task 'server', ->
     app.use connect-livereload!
@@ -38,9 +36,9 @@ gulp.task 'watch', ->
     gulp.watch './app/views/*.html', <[html]> .on \change, gulp-livereload.changed
     gulp.watch './app/assets/imgs/*', <[img]> .on \change, gulp-livereload.changed
     gulp.watch './app/assets/data/*', <[data]> .on \change, gulp-livereload.changed
-    gulp.watch './app/assets/scripts/*.js', <[js]> .on \change, gulp-livereload.changed
-    gulp.watch './app/assets/styles/*.css', <[css]> .on \change, gulp-livereload.changed
+    gulp.watch './app/styles/*.css', <[css]> .on \change, gulp-livereload.changed
+    gulp.watch './app/scripts/app.js', <[browserify]> .on \changed, gulp-livereload.changed
 
-gulp.task 'build', <[html js css vendor]>
+gulp.task 'build', <[html browserify css]>
 gulp.task 'dev', <[build server watch]>
 gulp.task 'default', <[build]>
