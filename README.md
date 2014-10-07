@@ -4,17 +4,18 @@ A web template for simple frontend. Using gulp to build simple webserver and liv
 
 ## Structure
 
-- asserts
-    + data
-    + imgs
-    + scripts
-    + styles
+- app
+    + asserts
+        - data
+        - imgs
+        - scripts
+        - styles
+    + views
 - vendor
     + angular
     + d3js
     + jquery
     + semantic-ui
-- views
 
 ## Installation
 
@@ -25,6 +26,9 @@ A web template for simple frontend. Using gulp to build simple webserver and liv
 and then open `http://localhost:3000/`
 
 ## Change Log
+
+#### 2014/10/06 v0.2.0
+- Change the Web folder structure.
 
 #### 2014/10/06 v0.1.2
 - update gulp-livereload to v2.0.0.
