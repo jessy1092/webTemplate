@@ -1,5 +1,6 @@
 webTemplate
 =============
+[![devDependency Status](https://david-dm.org/jessy1092/webTemplate/dev-status.svg?style=flat-square)](https://david-dm.org/jessy1092/webTemplate#info=devDependencies)
 A web template for simple frontend. Using gulp to build simple webserver and livereload.
 
 ## Structure
