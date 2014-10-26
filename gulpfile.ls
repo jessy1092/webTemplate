@@ -1,6 +1,8 @@
 require! <[gulp gulp-util gulp-livereload gulp-jade gulp-plumber]>
-require! <[express connect-livereload path vinyl-source-stream browserify]>
+require! <[express connect-livereload path vinyl-source-stream browserify glob karma liveify]>
+require! <[child_process]>
 
+exec = child_process.exec
 app = express!
 build_path = '_public'
 
@@ -25,6 +27,23 @@ gulp.task 'data', ->
 gulp.task 'css', ->
   gulp.src './app/styles/*.css'
     .pipe gulp.dest "#{build_path}/styles/"
+
+gulp.task 'browserify:test', ->
+  testFiles = glob.sync './test/spec/*.ls'
+  browserify testFiles
+    .transform liveify
+    .bundle!
+    .pipe vinyl-source-stream 'bundle-test.js'
+    .pipe gulp.dest "./test/spec/"
+
+gulp.task 'test',<[browserify:test]>, (callback)->
+  # karma.server.start { configFile: './test/karma.conf.js' }
+  karmaCmd = './node_modules/karma/bin/karma'
+  karmaConfig = './test/karma.conf.js'
+  exec "#{karmaCmd} start #{karmaConfig}", (err, stdout, stderr)->
+    gulp-util.log stdout
+    gulp-util.log stderr
+    callback err
 
 gulp.task 'browserify', ->
   browserify './app/scripts/app.js'
