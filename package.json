@@ -1,10 +1,10 @@
 {
-  "name"       : "webTemplate",
+  "name": "webTemplate",
   "description": "A web template for simple frontend. Using gulp to build simple webserver and livereload.",
-  "version"    : "0.1.2",
+  "version": "0.1.2",
   "contributor": [
     {
-      "name" : "Lee",
+      "name": "Lee",
       "email": "jessy1092@gmail.com"
     }
   ],
@@ -12,7 +12,7 @@
     "start": "gulp dev",
     "test": "gulp test"
   },
-  "engines":{
+  "engines": {
     "node": "0.10.x"
   },
   "dependencies": {
@@ -20,26 +20,28 @@
   },
   "devDependencies": {
     "LiveScript": "^1.3.1",
-    "express": "^4.3.1",
+    "browserify": "^12.0.1",
     "connect-livereload": "^0.5.0",
-    "vinyl-source-stream": "^1.0.0",
-    "gulp": "^3.7.0",
-    "gulp-jade": "^0.9.0",
-    "gulp-plumber": "^0.6.6",
+    "express": "^4.13.3",
+    "glob": "^6.0.1",
+    "gulp": "^3.9.0",
+    "gulp-jade": "^1.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-plumber": "^1.0.1",
+    "gulp-shell": "^0.5.1",
     "gulp-util": "^3.0.1",
-    "gulp-livereload": "^2.0.0",
-    "browserify": "^6.0.2",
-    "glob": "^4.0.6",
-    "should": "^4.0.1",
+    "karma": "^0.13.9",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.1",
     "liveify": "^1.3.1",
-    "karma": "^0.12.16",
-    "karma-jasmine": "^0.1.5",
-    "karma-phantomjs-launcher": "^0.1.4"
+    "phantomjs": "^1.9.17",
+    "should": "^7.1.1",
+    "vinyl-source-stream": "^1.0.0"
   },
   "repository": [
     {
       "type": "git",
-      "url" : "https://github.com/jessy1092/webTemplate"
+      "url": "https://github.com/jessy1092/webTemplate"
     }
   ],
   "license": "MIT"
